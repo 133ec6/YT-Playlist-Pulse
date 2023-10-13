@@ -1,0 +1,116 @@
+<!-- This is an HTML document -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- The title of the webpage displayed in the browser -->
+  <title>YouTube Playlist Pulse</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <!-- Character encoding for special characters -->
+  <meta charset="UTF-8">
+  <!-- Responsive design to fit different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <!-- Linking to the external CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <!-- Logo on the left side -->
+      <div>
+        <a class="navbar-brand" href="/">
+          <img src="logo.png" alt="Logo" width="50px" height="auto" class="d-inline-block align-text-top">
+        </a>
+        <!-- Brand name in the center -->
+        <a class="navbar-brand mx-auto" href="#">YouTube Playlist Pulse</a>
+      </div>
+      <!-- Toggler button for small screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Links on the right side -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+
+  
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class=" container h-75 p-5 rounded-3 desc">
+        <h2 style="font-size: 40px;" >YouTube Playlist Pulse</h2>
+        <p style="font-size: 22px;" >You can use the YouTube Playlist Pulse to <u>search for up to 50 topics</u> at a time. The <b>Search is limited upto</b> 4,000 topics in a day. Simply enter the topics, separated by commas, in the text area and click the <b>"Find videos"</b> button.
+        <button class="btn btn-outline-light" type="button">Example button</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <form onsubmit="findSongs(); return false;">
+        <textarea id="songs" name="songs" rows="10" placeholder="Enter topics separated by commas: e.g. topic 1, topic 2, topic 3 ...." oninput="updateSongCount()"></textarea>
+<span id="song-count">0 topics</span>
+<script>
+  function updateSongCount() {
+    const songsTextArea = document.getElementById("songs");
+    const songs = songsTextArea.value.split(",");
+    const songCountLabel = document.getElementById("song-count");
+    songCountLabel.textContent = `No. of topics: ${songs.length} topics${songs.length !== 1 ? "s" : ""}`;
+  }
+</script>
+
+  
+        <!-- Submit button for the form -->
+    <input type="submit" value="Find videos">
+  </form>
+    </div>
+  </div>
+  <!-- User input form with a label and text area -->
+  
+  <!-- Ordered list to display the output of the search -->
+  <ol class="output" id="output"></ol>
+  <!-- Linking to the external JavaScript file -->
+  <footer  class="bg-light py-3">
+    <div class="container">
+      <div class="row" class="text-center padd">
+        <div class="text-center padd">
+          <img class="about-img" src="about.png" alt="about">
+          <h3 id="about" class="txt" >&#x1F449;About Us</h3>
+          <p style="margin-bottom: 0px;" >"Welcome to YouTube Playlist Pulse, a tool created by a team of students who share a passion for finding and discovering different topics on YouTube. We understand the hassle of having to search for topics one by one and created this tool to simplify the process. With YouTube Playlist Pulse, you can search for up to 50 topics at a time and discover topics with ease.
+            
+            Our goal is to make the process of finding topics on YouTube simple and hassle-free. We hope that our tool will bring joy and excitement to your different topics discovery journey. 
+           Thank you for using YouTube Playlist Pulse, and happy searching!"</p>
+        </div>
+        <div style="width: 25%; border-top: 1.5px dotted; border-bottom: 0px; border-left: 0px; border-right: 0px; margin: auto;"></div>
+        <div class="text-center padd">
+          <img class="contact-img" src="contact.png" alt="contact">
+          <h3 id="contact" class="txt" >&#x1F449;Contact Us</h3>
+          <ul class="list-unstyled">
+            <li>If you have any feedback or suggestions, we would love to hear from you. Please feel free to reach out to us.</li>
+            <li>Email: <u> kunalr14082001@gmail.com</u></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer style="display: flex; align-items: center; justify-content: center; height: 78.5px;" class="fixed-bottom bg-dark text-white p-3">
+    <div style="font-size: 22px;" class="container-fluid text-center">
+      Made with ❤️ by Kunal Rastogi
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

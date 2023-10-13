@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Video Player</title>
+</head>
+<body>
+  <h1>YouTube Video Player</h1>
+  <input type="text" id="video-url">
+  <button onclick="playVideo()">Play Video</button>
+  <div id="video-player"></div>
+
+  <script>
+    var videoPlayer = document.getElementById("video-player");
+    var videoUrlInput = document.getElementById("video-url");
+
+    function playVideo() {
+      var videoUrl = videoUrlInput.value;
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube.com/embed/" + videoUrl;
+      iframe.width = 560;
+      iframe.height = 315;
+      videoPlayer.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
